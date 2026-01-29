@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Sistema de Gestión Académica{% endblock %}</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    {% block extra_css %}{% endblock %}
+  </head>
+  <body>
+    <div class="container">
+      {% block content %}
+      <!-- El contenido específico de cada página va aquí -->
+      <a>Hola a todos en el 201</a> | {% endblock %}
+
+      <footer>
+        <p>Desarrollado con FastAPI | Sistema de Gestión Académica</p>
+      </footer>
+    </div>
+
+    {% block extra_js %}{% endblock %}
+  </body>
+</html>

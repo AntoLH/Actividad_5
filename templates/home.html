@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block title %}Inicio - Sistema Académico{% endblock
+%} {% block content %}
+<header>
+  <h1>{{ titulo }}</h1>
+  <p class="subtitle">{{ descripcion }}</p>
+</header>
+
+<main>
+  <!-- Sección de estadísticas -->
+  <section class="stats">
+    <div class="stat-box">
+      <h2>{{ total_estudiantes }}</h2>
+      <p>Estudiantes Registrados</p>
+    </div>
+    <div class="stat-box">
+      <h2>{{ estudiantes_activos }}</h2>
+      <p>Estudiantes Activos</p>
+    </div>
+    <div class="stat-box">
+      <h2>{{ promedio_general }}</h2>
+      <p>Promedio General</p>
+    </div>
+  </section>
+
+  <!-- Sección de características -->
+  <section class="features">
+    {% for feature in features %}
+    <div class="feature-card">
+      <span class="feature-icon">{{ feature.icono }}</span>
+      <h3>{{ feature.titulo }}</h3>
+      <p>{{ feature.descripcion }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <!-- Botones de acción -->
+  <section class="actions">
+    <a href="/docs" class="btn btn-primary">Documentación API</a>
+    <a href="/api/v1/estudiantes" class="btn btn-secondary"
+      >Ver Estudiantes (JSON)</a
+    >
+  </section>
+</main>
+{% endblock %}
